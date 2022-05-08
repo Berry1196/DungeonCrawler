@@ -1,0 +1,115 @@
+@startuml
+
+Class Game {
++startGame()
+}
+
+Game o-- Player
+Class Player {
++ String name = scanner.nextLine
++ chooseClass()
+}
+
+Class FileIO {
+}
+Player o-- Type
+Interface Type {
++ int HP
++ int attack
++ int defense
++ int gold
++setHP()
++getHP()
++setAttack()
++getAttack()
++setDefense()
++getDefense()
++setGold()
++getGold()
+}
+Type o-- Barbarian
+ abstract Class Barbarian {
+String className
+
+}
+
+Type o-- Warrior
+ abstract Class Warrior {
+String className
+}
+
+Type o-- Tank
+ abstract Class Tank {
+String className
+}
+
+Game o-- Interactions
+Class Interactions {
++treasureChest()
++trap()
++riddles()
+}
+
+
+'Class Stages{
+'stageOne()
+'stageTwo()
+'stageThree()
+
+Game o-- Monsters
+interface Monsters {
++getMonsterHP()
++setMonsterHP()
++getMonsterAttack()
++setMonsterAttack()
++getMonsterDefense()
++setMonsterDefense()
+}
+Class AMonster implements Monsters{
+
+}
+ AMonster <|-- Skeleton
+abstract Class Skeleton {
++int monsterHP
++int monsterAttack
++int monsterDefense
+}
+AMonster <|-- Minotaur
+ abstract class Minotaur {
++int monsterHP
++int monsterAttack
++int monsterDefense
+}
+AMonster <|-- Dragon
+ abstract Class Dragon  {
++int monsterHP
++int monsterAttack
++int monsterDefense
+}
+
+
+
+@enduml
+
+abstract class AbstractList
+abstract AbstractCollection
+interface List
+interface Collection
+
+List <|-- AbstractList
+Collection <|-- AbstractCollection
+
+Collection <|- List
+AbstractCollection <|- AbstractList
+AbstractList <|-- ArrayList
+
+class ArrayList {
+Object[] elementData
+size()
+}
+
+enum TimeUnit {
+DAYS
+HOURS
+MINUTES
+}

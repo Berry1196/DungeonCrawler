@@ -1,0 +1,31 @@
+@startuml
+!pragma layout smetana
+
+Object Main
+Object Game
+Object Player
+Object Stages
+Object Equipment
+Object Interactions
+Object HighScore
+Object Monsters
+Object Characters
+Object FileIO
+
+
+
+
+Main -- Game
+Main -- FileIO
+Game *-- Stages : 2
+Game *-- Player : 1
+Game *-- HighScore
+Player *-- Characters : 2-5
+Player *-- Equipment
+Stages -- Player
+Stages *-- Monsters
+Stages *-- Interactions
+
+
+
+@enduml
