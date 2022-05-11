@@ -14,6 +14,22 @@ public abstract class AType implements Type {
         this.gold = gold;
     }
 
+    public void setHP(int HP) {
+        this.HP = HP;
+    }
+
+    public void setAttack(int attack) {
+        this.attack = attack;
+    }
+
+    public void setDefense(int defense) {
+        this.defense = defense;
+    }
+
+    public void setGold(int gold) {
+        this.gold = gold;
+    }
+
     @Override
     public int getHP() {
         return HP;
