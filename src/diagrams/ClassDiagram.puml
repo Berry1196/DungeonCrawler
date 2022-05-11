@@ -14,10 +14,6 @@ Class FileIO {
 }
 Player o-- Type
 Interface Type {
-+ int HP
-+ int attack
-+ int defense
-+ int gold
 +setHP()
 +getHP()
 +setAttack()
@@ -27,20 +23,38 @@ Interface Type {
 +setGold()
 +getGold()
 }
-Type o-- Barbarian
+
+Type o-- AType
+Class AType {
+
+}
+
+AType o-- Barbarian
  abstract Class Barbarian {
-String className
++ int HP
++ int attack
++ int defense
++ int gold
++ String className
 
 }
 
-Type o-- Warrior
+AType o-- Warrior
  abstract Class Warrior {
-String className
++ int HP
++ int attack
++ int defense
++ int gold
++ String className
 }
 
-Type o-- Tank
+AType o-- Tank
  abstract Class Tank {
-String className
++ int HP
++ int attack
++ int defense
++ int gold
++ String className
 }
 
 Game o-- Interactions
