@@ -1,17 +1,19 @@
 @startuml
 
+Main o-- Game
+Class Main
+
 Class Game {
 +startGame()
 }
 
-Game o-- Player
+storyMap o-- Player
 Class Player {
 + String name = scanner.nextLine
 + chooseClass()
 }
 
-Class FileIO {
-}
+
 Player o-- Type
 Interface Type {
 + int HP
@@ -43,20 +45,22 @@ Type o-- Tank
 String className
 }
 
-Game o-- Interactions
+storyMap o-- Interactions
 Class Interactions {
 +treasureChest()
 +trap()
-+riddles()
+'riddles()
+}
+
+storyMap o-- Riddles
+Class Riddles {
++rOne
++rTwo
++rThree
 }
 
 
-'Class Stages{
-'stageOne()
-'stageTwo()
-'stageThree()
-
-Game o-- Monsters
+storyMap o-- Monsters
 interface Monsters {
 +getMonsterHP()
 +setMonsterHP()
@@ -81,35 +85,20 @@ AMonster <|-- Minotaur
 +int monsterDefense
 }
 AMonster <|-- Dragon
- abstract Class Dragon  {
+ abstract Class Dragon {
 +int monsterHP
 +int monsterAttack
 +int monsterDefense
 }
 
+Game o-- storyMap
+Class storyMap {
++mapOne()
+}
+
+
 
 
 @enduml
 
-abstract class AbstractList
-abstract AbstractCollection
-interface List
-interface Collection
-
-List <|-- AbstractList
-Collection <|-- AbstractCollection
-
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
-
-class ArrayList {
-Object[] elementData
-size()
-}
-
-enum TimeUnit {
-DAYS
-HOURS
-MINUTES
 }
