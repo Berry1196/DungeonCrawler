@@ -1,25 +1,19 @@
 @startuml
 
-Main o-- Game
-Class Main
-
 Class Game {
 +startGame()
 }
 
-storyMap o-- Player
+Game o-- Player
 Class Player {
 + String name = scanner.nextLine
 + chooseClass()
 }
 
-
+Class FileIO {
+}
 Player o-- Type
 Interface Type {
-+ int HP
-+ int attack
-+ int defense
-+ int gold
 +setHP()
 +getHP()
 +setAttack()
@@ -29,38 +23,54 @@ Interface Type {
 +setGold()
 +getGold()
 }
-Type o-- Barbarian
+
+Type o-- AType
+Class AType {
+
+}
+
+AType o-- Barbarian
  abstract Class Barbarian {
-String className
++ int HP
++ int attack
++ int defense
++ int gold
++ String className
 
 }
 
-Type o-- Warrior
+AType o-- Warrior
  abstract Class Warrior {
-String className
++ int HP
++ int attack
++ int defense
++ int gold
++ String className
 }
 
-Type o-- Tank
+AType o-- Tank
  abstract Class Tank {
-String className
++ int HP
++ int attack
++ int defense
++ int gold
++ String className
 }
 
-storyMap o-- Interactions
+Game o-- Interactions
 Class Interactions {
 +treasureChest()
 +trap()
-'riddles()
-}
-
-storyMap o-- Riddles
-Class Riddles {
-+rOne
-+rTwo
-+rThree
++riddles()
 }
 
 
-storyMap o-- Monsters
+'Class Stages{
+'stageOne()
+'stageTwo()
+'stageThree()
+
+Game o-- Monsters
 interface Monsters {
 +getMonsterHP()
 +setMonsterHP()
@@ -85,20 +95,13 @@ AMonster <|-- Minotaur
 +int monsterDefense
 }
 AMonster <|-- Dragon
- abstract Class Dragon {
+ abstract Class Dragon  {
 +int monsterHP
 +int monsterAttack
 +int monsterDefense
 }
 
-Game o-- storyMap
-Class storyMap {
-+mapOne()
-}
-
-
 
 
 @enduml
 
-}
