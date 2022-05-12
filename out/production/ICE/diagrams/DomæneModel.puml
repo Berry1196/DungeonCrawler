@@ -4,25 +4,27 @@
 Object Main
 Object Game
 Object Player
-Object storyMap
+Object Stages
 Object Equipment
 Object Interactions
 Object HighScore
 Object Monsters
 Object Characters
-
+Object FileIO
 
 
 
 
 Main -- Game
-Game *-- storyMap: 2
+Main -- FileIO
+Game *-- Stages : 2
 Game *-- Player : 1
+Game *-- HighScore
 Player *-- Characters : 2-5
 Player *-- Equipment
-storyMap *-- Player
-storyMap *-- Monsters
-storyMap *-- Interactions
+Stages -- Player
+Stages *-- Monsters
+Stages *-- Interactions
 
 
 
