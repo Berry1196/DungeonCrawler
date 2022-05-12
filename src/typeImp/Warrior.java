@@ -8,7 +8,7 @@ public class Warrior extends AType {
     }
     @Override
     public String toString() {
-        return " " + getHP() + " " + getAttack() + " " +
-                getDefense() + " " + getGold();
+        return "Your HP: " + getHP() + "\nYour attack: " + getAttack() + "\nYour defense: " +
+                getDefense() + "\nYour gold: " + getGold();
     }
 }
