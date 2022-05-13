@@ -1,7 +1,6 @@
 package ice;
 
-import typeImp.Barbarian;
-import types.AType;
+import types.ACharacterType;
 
 import java.util.Scanner;
 
@@ -21,7 +20,7 @@ public class Interactions {
 
     }
 
-    public void attackRiddle(AType actor) {
+    public void attackRiddle(ACharacterType actor) {
         System.out.println("What has to be broken before you can use it?");
         userInput = scan.nextLine();
         if (userInput.equalsIgnoreCase("Egg")) {

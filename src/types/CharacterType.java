@@ -1,6 +1,6 @@
 package types;
 
-public interface Type {
+public interface CharacterType {
     int getHP();
     int getAttack();
     int getDefense();

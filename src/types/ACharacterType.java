@@ -1,13 +1,13 @@
 package types;
 
 
-public abstract class AType implements Type {
+public abstract class ACharacterType implements CharacterType {
     int HP;
     int attack;
     int defense;
     int gold;
 
-    public AType(int HP, int attack, int defense, int gold) {
+    public ACharacterType(int HP, int attack, int defense, int gold) {
         this.HP = HP;
         this.attack = attack;
         this.defense = defense;

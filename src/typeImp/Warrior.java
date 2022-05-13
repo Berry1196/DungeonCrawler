@@ -1,8 +1,8 @@
 package typeImp;
 
-import types.AType;
+import types.ACharacterType;
 
-public class Warrior extends AType {
+public class Warrior extends ACharacterType {
     public Warrior(int HP, int attack, int defense, int gold) {
         super(HP, attack, defense, gold);
     }
